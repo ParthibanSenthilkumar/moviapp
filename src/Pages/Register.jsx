@@ -39,7 +39,11 @@ const Register = () => {
       );
       let resgisId = regsiterAuth.user;
       let uid = resgisId.uid;
-      await Registeruser(uid, data);
+      await Registeruser({
+        ...data,
+      uid,
+      createDateTime:new Date().toISOString() 
+    });
       SuccessToast("regsiter Successfully");
       // setformData({
       //   UserName: "",
