@@ -1,11 +1,13 @@
 import React from "react";
 import MovieRows from "../Components/MovieRows";
 import Herobanner from "../Components/Herobanner";
-
+import useFetch from "../Hooks/useFetch";
+import Moviedetails from "./Moviedetails";
 const Home = ({ title, apipath }) => {
+   let { data,loading } = useFetch("trending/movie/week");
   return (
     <>
-    <Herobanner />
+    <Herobanner  data={data} loading={loading} detailsPath={Moviedetails}  />
       <section className="movie_List mb-5">
         <div className="container-fluid">
           <MovieRows title="Trending Now" apipath="trending/movie/week" />

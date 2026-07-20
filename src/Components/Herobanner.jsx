@@ -4,11 +4,11 @@ import useFetch from "../Hooks/useFetch";
 import { Link } from "react-router-dom";
 import Loader from "./Loader";
 
-const Herobanner = () => {
-  let { data,loading } = useFetch("trending/movie/week");
-  const firstMovie = data?.[0];
-  console.log(firstMovie, "data banner_data");
-  // const mov    ie=data[Math.floor(Math.random()* data.length)]
+const Herobanner = ({data,loading,detailsPath}) => {
+  // const firstMovie = data?.[0];
+  // console.log(firstMovie, "data banner_data");
+  if(!data.length) return null
+  const item=data[Math.floor(Math.random()* data.length)]
 
   if(loading){
     return(
@@ -17,6 +17,7 @@ const Herobanner = () => {
         </div>
     )
   }
+
   return (
     <>
       <section className="banner">
@@ -24,26 +25,26 @@ const Herobanner = () => {
             className="banner_bg kenburns-top"
             style={{
             backgroundImage: `url(
-                https://image.tmdb.org/t/p/original${firstMovie?.backdrop_path}
+                https://image.tmdb.org/t/p/original${item?.backdrop_path}
             )`,
             }}
         ></div>
         <div className="banner_contents">
-          <h1 className="banner_title">{firstMovie?.title}</h1>
+          <h1 className="banner_title">{item?.title}</h1>
 
           <div className="banner_buttons">
             <button className="banner_button">Play</button>
 
             <Link
               className="banner_button"
-              to={`/home/moviedetails/${firstMovie?.id}`}
+              to={`/home/moviedetails/${item?.id}`}
             >
               More Info
             </Link>
           </div>
 
           <p className="banner_description">
-            {firstMovie?.overview?.slice(0, 250)}...
+            {item?.overview?.slice(0, 250)}...
           </p>
         </div>
 
