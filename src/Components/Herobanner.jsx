@@ -4,7 +4,7 @@ import useFetch from "../Hooks/useFetch";
 import { Link } from "react-router-dom";
 import Loader from "./Loader";
 
-const Herobanner = ({data,loading,detailsPath}) => {
+const Herobanner = ({data,loading}) => {
   // const firstMovie = data?.[0];
   // console.log(firstMovie, "data banner_data");
   if(!data.length) return null

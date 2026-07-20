@@ -7,7 +7,7 @@ const Home = ({ title, apipath }) => {
    let { data,loading } = useFetch("trending/movie/week");
   return (
     <>
-    <Herobanner  data={data} loading={loading} detailsPath={Moviedetails}  />
+    <Herobanner  data={data} loading={loading}  />
       <section className="movie_List mb-5">
         <div className="container-fluid">
           <MovieRows title="Trending Now" apipath="trending/movie/week" />
