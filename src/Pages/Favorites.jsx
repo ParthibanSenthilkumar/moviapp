@@ -5,7 +5,7 @@ import Moviecard from "../Components/Moviecard";
 const Favorites = () => {
   const { favMovie, setFavMovie } = useContext(Favmoviecontext);
 
-  console.log(favMovie, "favmovie");
+  // console.log(favMovie, "favmovie");
 
   return (
     <>

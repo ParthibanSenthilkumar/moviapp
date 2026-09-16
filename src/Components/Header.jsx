@@ -14,7 +14,7 @@ import { auth } from '../Services/Firebase';
 const Header = () => {
 
   const {userProfile,setuserProfile}=useContext(userContext)
-  console.log(userProfile,"userProfile");
+  // console.log(userProfile,"userProfile");
   
   const [q,setQ]=useState('')
     let navigate=useNavigate()

@@ -13,7 +13,7 @@ const useFetch = (apipath,queryTerm="") => {
         setLoading(true);
 
         const loadMovies = await fetchData(apipath,queryTerm);
-        console.log(loadMovies,"loaded movies");
+        // console.log(loadMovies,"loaded movies");
         setData(loadMovies);
       } catch (error) {
         errorToast(error.message);

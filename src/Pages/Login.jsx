@@ -1,11 +1,11 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { auth } from "../Services/Firebase";
 import { Link, useNavigate } from "react-router-dom";
 import { errorToast, SuccessToast } from "../Components/Toaster";
 import { LoginUser,Userprofile } from "../Services/Api";
 import { userContext } from "../Context/Createcontectprofile";
-import { create } from "axios";
+import Loader from "../Components/Loader"
 
 const Login = () => {
   let [Loginemail, setLoginemail] = useState("");
@@ -33,7 +33,7 @@ const Login = () => {
       });
      let profile= await Userprofile(uid)
       setuserProfile(profile)
-      console.log(profile,"profile");
+      // console.log(profile,"profile");
       
       setLoginemail("");
       setPassword("");
@@ -45,12 +45,15 @@ const Login = () => {
       setloading(false);
     }
   };
-
+  if(Loading){
+    return <div className="d-flex align-items-center justify-content-center vh-100 vw-100">
+      <Loader />
+    </div>  
+  }
 
   return (
     <>
       <section className="auth_section">
-
           <div className="form_container">
             <h1>Sign In</h1>
             <form onSubmit={handlesubmit}>

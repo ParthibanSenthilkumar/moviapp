@@ -186,7 +186,19 @@ input::placeholder{
   display: flex;
   gap: 10px;
 }
-
+.close_but{
+    border: 1px solid #dc3545;
+    float: right;
+    margin: 10px;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background: #393939;
+    color: #ffff;
+}
+.trailer_content{
+    padding: 0px 40px;
+}
 .banner_button {
   cursor: pointer;
   color: #fff;

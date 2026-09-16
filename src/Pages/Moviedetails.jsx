@@ -10,7 +10,7 @@ import { Favmoviecontext } from "../Context/CreateContextfavmobie";
 
 const Moviedetails = () => {
   const [movieData, setmovieData] = useState(null);
-  console.log(movieData, "selected movie data");
+  // console.log(movieData, "selected movie data");
 
   const {favMovie,setFavMovie}=useContext(Favmoviecontext)
 
@@ -24,7 +24,7 @@ const Moviedetails = () => {
     const fetchMovie = async () => {
       try {
         let res = await axios.get(url);
-        console.log(res.data, "data");
+        // console.log(res.data, "data");
         setmovieData(res.data);
       } catch (error) {
         errorToast(error.message);

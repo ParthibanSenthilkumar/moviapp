@@ -10,7 +10,7 @@ import "swiper/css/navigation"
 
 const MovieRows = ({ title, apipath }) => {
   const { data, loading, isError } = useFetch(apipath);
-  console.log(data, "moviedata");
+  // console.log(data, "moviedata");
   if (loading) {
     return (
       <div className="d-flex align-items-center justify-content-center vh-100 vw-100">
