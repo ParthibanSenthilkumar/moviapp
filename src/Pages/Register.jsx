@@ -52,7 +52,7 @@ const Register = () => {
       //   Phonenumber: "",
       // });
       reset();
-      console.log(data, "formdata");
+      // console.log(data, "formdata");
     } catch (error) {
       errorToast(error.message);
     } finally {

@@ -8,7 +8,7 @@ const Tvshow = () => {
   let { data,loading }=useFetch("tv/airing_today")
 
   return (
-    <section className="tvshows_section">
+    <section className="tvshows_section pb-5">
       <div className="container-fluid">
 
         <Herobanner  data={data} loading={loading} /> 
